@@ -17,6 +17,10 @@ public class StudentDataProcessor {
         //Try with resources statement
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
              BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+            
+            // Variables for storing student data
+            String nameLine, numClassesString, studentNumber;
+        }
           
         }
     }
