@@ -64,8 +64,8 @@ public class StudentDataProcessor {
         if (!Pattern.matches("[a-zA-Z]+", secondName)) return "Invalid second name. Should contain letters only.";
 
         // Validating student number format
-        if (!Pattern.matches("\\d{2}[a-zA-Z]{2,3}[0-9]+", studentNumber)) {
-            return "Invalid student number. Should start with 2 numbers, followed by 2-3 letters, and end with numbers.";
+        if (!Pattern.matches("20\\d{1}[a-zA-Z]{2,3}\\d+", studentNumber)) {
+        return "Invalid student number. Should start with the year 2020 or later, followed by 2-3 letters, and end with numbers.";
         }
         
     // Validating the number of classes
