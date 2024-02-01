@@ -3,16 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package studentdataprocessor;
-
+import java.io.*;
 /**
  *
  * @author jakubzaruski
  */
 public class StudentDataProcessor {
     public static void main(String[] args) {
-        // File fullpaths for input and output files
+        // File paths for input and output files
         String inputFile = "/Users/jakubzaruski/Desktop/students.txt";
         String outputFile = "/Users/jakubzaruski/Desktop/status.txt";
+        
+        //Try with resources statement
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+          
+        }
     }
-    
-}
