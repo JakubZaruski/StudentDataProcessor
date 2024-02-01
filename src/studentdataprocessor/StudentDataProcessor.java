@@ -4,6 +4,7 @@
  */
 package studentdataprocessor;
 import java.io.*;
+
 /**
  *
  * @author jakubzaruski
@@ -35,8 +36,19 @@ public class StudentDataProcessor {
                 // Assigning first and second names
                 String firstName = names[0];
                 String secondName = names[1];
-
                 
+                // Validating student data
+                String validationResult = validateStudentData(firstName, secondName, studentNumber, numClassesString);
+                if (validationResult.equals("Valid")) {
+                    // Determining workload based on number of classes
+                    String workload = getWorkloadDescription(Integer.parseInt(numClassesString));
+                    // Writing valid data to the output file
+                    writer.write(studentNumber + " - " + secondName + "\n" + workload);
+                    writer.newLine();
+                    writer.newLine(); // Adding extra newline for separation
+                } else {
+                    // Printing error message for invalid data
+                    System.out.println("Error in data: \"" + nameLine + " " + numClassesString + " " + studentNumber + "\" - " + validationResult);
             }
         }
           
