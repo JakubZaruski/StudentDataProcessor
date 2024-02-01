@@ -25,6 +25,14 @@ public class StudentDataProcessor {
             while ((nameLine = reader.readLine()) != null &&
                    (numClassesString = reader.readLine()) != null &&
                    (studentNumber = reader.readLine()) != null) {
+               
+            // Splitting the name line into first and second names
+                String[] names = nameLine.split(" ");
+                if (names.length != 2) {
+                    // Error handling for incorrect name format
+                    System.out.println("Error in name format: \"" + nameLine + "\"");
+                }
+            }
         }
           
         }
