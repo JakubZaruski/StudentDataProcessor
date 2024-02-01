@@ -32,6 +32,11 @@ public class StudentDataProcessor {
                     // Error handling for incorrect name format
                     System.out.println("Error in name format: \"" + nameLine + "\"");
                 }
+                // Assigning first and second names
+                String firstName = names[0];
+                String secondName = names[1];
+
+                
             }
         }
           
