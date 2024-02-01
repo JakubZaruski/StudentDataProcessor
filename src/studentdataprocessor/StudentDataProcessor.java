@@ -9,12 +9,10 @@ package studentdataprocessor;
  * @author jakubzaruski
  */
 public class StudentDataProcessor {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // File fullpaths for input and output files
+        String inputFile = "/Users/jakubzaruski/Desktop/students.txt";
+        String outputFile = "/Users/jakubzaruski/Desktop/status.txt";
     }
     
 }
