@@ -4,6 +4,7 @@
  */
 package studentdataprocessor;
 import java.io.*;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -55,3 +56,14 @@ public class StudentDataProcessor {
         
          }
     }
+
+    // Method to validate student data
+    private static String validateStudentData(String firstName, String secondName, String studentNumber, String numClassesString) {
+        // Validating first and second names
+        if (!Pattern.matches("[a-zA-Z]+", firstName)) return "Invalid first name. Should contain letters only.";
+        if (!Pattern.matches("[a-zA-Z]+", secondName)) return "Invalid second name. Should contain letters only.";
+
+        // Validating student number format
+        if (!Pattern.matches("\\d{2}[a-zA-Z]{2,3}[0-9]+", studentNumber)) {
+            return "Invalid student number. Should start with 2 numbers, followed by 2-3 letters, and end with numbers.";
+        }
