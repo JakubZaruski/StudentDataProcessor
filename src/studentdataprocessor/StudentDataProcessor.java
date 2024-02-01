@@ -20,6 +20,11 @@ public class StudentDataProcessor {
             
             // Variables for storing student data
             String nameLine, numClassesString, studentNumber;
+            
+            // Reading the file line by line
+            while ((nameLine = reader.readLine()) != null &&
+                   (numClassesString = reader.readLine()) != null &&
+                   (studentNumber = reader.readLine()) != null) {
         }
           
         }
