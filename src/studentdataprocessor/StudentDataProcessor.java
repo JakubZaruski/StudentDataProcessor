@@ -49,8 +49,9 @@ public class StudentDataProcessor {
                 } else {
                     // Printing error message for invalid data
                     System.out.println("Error in data: \"" + nameLine + " " + numClassesString + " " + studentNumber + "\" - " + validationResult);
+                }
             }
-        }
-          
-        }
+         } catch (IOException e) {
+        
+         }
     }
