@@ -67,3 +67,13 @@ public class StudentDataProcessor {
         if (!Pattern.matches("\\d{2}[a-zA-Z]{2,3}[0-9]+", studentNumber)) {
             return "Invalid student number. Should start with 2 numbers, followed by 2-3 letters, and end with numbers.";
         }
+        
+    // Validating the number of classes
+        try {
+            int numClasses = Integer.parseInt(numClassesString);
+            if (numClasses < 1 || numClasses > 8) return "Invalid number of classes. Should be between 1 and 8.";
+        } catch (NumberFormatException e) {
+            return "Invalid number of classes. Should be an integer.";
+        }
+
+        return "Valid";
