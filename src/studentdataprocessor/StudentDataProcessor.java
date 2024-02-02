@@ -73,6 +73,23 @@ public class StudentDataProcessor {
     if (year < 20) {
         return "Invalid student number. The year part must be 20 or higher.";
     }
+    
+    // Extracting the numeric part after the letters
+    String numericPartStr = studentNumber.substring(4); // Assuming at least 2 digits for year and 2-3 for letters
+    // Adjust for possible 3-letter codes
+    if (Character.isLetter(numericPartStr.charAt(0))) {
+        numericPartStr = numericPartStr.substring(1);
+    }
+
+    // Validating the numeric part is between 1 and 200
+    try {
+        int numericPart = Integer.parseInt(numericPartStr);
+        if (numericPart < 1 || numericPart > 200) {
+            return "Invalid student number. The number after the letter(s) must be between 1 and 200.";
+        }
+    } catch (NumberFormatException e) {
+        return "Invalid student number. The numeric part after the letters is not a valid number.";
+    }
         
     // Validating the number of classes
         try {
