@@ -63,10 +63,16 @@ public class StudentDataProcessor {
         if (!Pattern.matches("[a-zA-Z]+", firstName)) return "Invalid first name. Should contain letters only.";
         if (!Pattern.matches("[a-zA-Z]+", secondName)) return "Invalid second name. Should contain letters only.";
 
-        // Validating student number format
-        if (!Pattern.matches("20\\d{1}[a-zA-Z]{2,3}\\d+", studentNumber)) {
-        return "Invalid student number. Should start with the year 2020 or later, followed by 2-3 letters, and end with numbers.";
-        }
+       // Check the student number format 2 digits at the front representing the year
+    if (!Pattern.matches("\\d{2}[a-zA-Z]{2,3}\\d+", studentNumber)) {
+        return "Invalid student number. Should follow the format: YYXX(N) where 'YY' is the year, 'XX' are letters, and '(N)' is the numeric part.";
+    }
+
+    // Extract and validate the year part for being 20 or higher
+    int year = Integer.parseInt(studentNumber.substring(0, 2));
+    if (year < 20) {
+        return "Invalid student number. The year part must be 20 or higher.";
+    }
         
     // Validating the number of classes
         try {
